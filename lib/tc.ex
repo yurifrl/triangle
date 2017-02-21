@@ -1,18 +1,18 @@
 defmodule Tc do
   @moduledoc """
-  Documentation for TriangleChallenge.
+  Documentation for Triangle Computer (Tc) Module.
   """
 
   @doc """
-  Hello world.
+  Triangle Typer.
 
   ## Examples
 
-      iex> TriangleChallenge.hello
-      :world
+      iex> Tc.triangle_type(0, 0, 0)
+      :equilateral
 
   """
-  def hello do
-    :world
+  def triangle_type(a, b, c) do
+    :equilateral
   end
 end
