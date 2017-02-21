@@ -9,7 +9,7 @@ defmodule TcTest do
   @doc """
   Test the happy path, in a way that esposes the api
   """
-  test "Match a Equilateral triangle" do
+  test "Asserts that the triangle is Equilateral" do
     assert Tc.triangle_type(0, 0, 0) == :equilateral
   end
 end

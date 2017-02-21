@@ -27,4 +27,11 @@ A timeline of development considerations (there will be grammar errors)
   and it works, i have the same environment as my teammate and production,
   It's like having superpowers XD
 - The new updated elixir image just donwloaded, so i will start the project
-
+- I renamed the module to something short, Tc extends for Triangle Computation? maybe?
+- I'm no good with names.
+- Is not a good pratice to jumping writing code, but the completion requirements
+  are well defined, so i don't believe it will be a problem, so i started writing tests
+- The first test started with a list, and i looped the test values to the function
+  but i desided not to get ahead of myself, and do step by step
+- The first test if a very simple one, just to get a taste of the api
+- Now i will google the Pythagorean Theorem because i do not remember it at all
