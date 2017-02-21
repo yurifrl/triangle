@@ -1,13 +1,15 @@
 defmodule TcTest do
   @moduledoc """
-  To right the desired output i
+  Tests Triangle Computer Module
   """
 
   use ExUnit.Case
   doctest Tc
 
+  @doc """
+  Test the happy path, in a way that esposes the api
+  """
   test "Match a Equilateral triangle" do
-    test_value = [ {0, 0, 0}, :equilateral ]
-    assert Tc.triangle_type(hd(test_value)) == tl(test_value)
+    assert Tc.triangle_type(0, 0, 0) == :equilateral
   end
 end
