@@ -1,4 +1,4 @@
-defmodule TriangleChallenge do
+defmodule Tc do
   @moduledoc """
   Documentation for TriangleChallenge.
   """
