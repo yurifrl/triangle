@@ -54,6 +54,7 @@ defmodule Triangle.StreamAdapter do
       |> File.stream!([], 2048)
       |> Stream.map(&read_chunk/1)
       |> Stream.flat_map(&List.flatten/1)
+      |> Enum.to_list
 
     { :noreply, stream }
   end
