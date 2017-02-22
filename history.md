@@ -11,8 +11,9 @@ TODO
 TODO
 
 # Reflect on decissions.
+TODO
 
-# History.
+# Worklog.
 A timeline of development considerations (there will be grammar errors)
 
 - First thing i tought: that is to easy, so there migth be a trick there,
