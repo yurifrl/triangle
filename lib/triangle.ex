@@ -1,19 +1,23 @@
 defmodule Triangle do
+  @type type :: :equilateral | :isosceles | :scalene
+
+  @spec type(number, number, number) :: { :ok, type } | { :error, :atom }
+
   @moduledoc """
   Documentation for Triangle Module.
 
   ## Examples
     iex> Triangle.type(1, 1, 1)
-    :equilateral
+    { :ok, :equilateral }
 
     iex> Triangle.type(1, 1, 2)
-    :isosceles
+    { :ok, :isosceles }
 
     iex> Triangle.type(1, 2, 3)
-    :scalene
+    { :ok, :scalene }
 
     iex> Triangle.type(1, 2, 0)
-    :invalid
+    { :error, :invalid }
   """
 
   @doc """
@@ -22,42 +26,42 @@ defmodule Triangle do
 
   ## Examples
     iex> Triangle.type([0, 0, 0])
-    :invalid
+    { :error, :invalid }
   """
-  def type(a, b, c) when a <= 0 or b <= 0 or c <= 0, do: :invalid
+  def type(a, b, c) when a <= 0 or b <= 0 or c <= 0, do: { :error, :invalid }
 
   @doc """
   Equilateral, when all sides are equal
 
   ## Examples
     iex> Triangle.type(2, 2, 2)
-    :equilateral
+    { :ok, :equilateral }
   """
-  def type(a, a, a), do: :equilateral
+  def type(a, a, a), do: { :ok, :equilateral }
 
   @doc """
   Isosceles, when x are equal
 
   ## Examples
     iex> Triangle.type(1, 1, 2)
-    :isosceles
+    { :ok, :isosceles }
   """
-  def type(a, a, _), do: :isosceles
-  def type(a, _, a), do: :isosceles
-  def type(_, a, a), do: :isosceles
+  def type(a, a, _), do: { :ok, :isosceles }
+  def type(a, _, a), do: { :ok, :isosceles }
+  def type(_, a, a), do: { :ok, :isosceles }
 
   @doc """
   Scalene, when they are, all different
 
   ## Examples
     iex> Triangle.type(1, 2, 3)
-    :scalene
+    { :ok, :scalene }
   """
-  def type(_, _, _), do: :scalene
+  def type(_, _, _), do: { :ok, :scalene }
 
   @doc """
   Triangle Type: Is not a triangle when it doesn't have 3 sides.
   That's a fun thing about triangles.
   """
-  def type(_), do: :invalid
+  def type(_), do: { :error, :invalid }
 end

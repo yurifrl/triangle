@@ -1,17 +1,3 @@
-# Design Desisions.
-TODO
-
-# Structural Considerations.
-TODO
-
-# Readability of code and error cases.
-TODO
-
-# Showcase problem solving skills.
-TODO
-
-# Reflect on decissions.
-TODO
 
 # Worklog.
 A timeline of development considerations (there will be grammar errors)

@@ -13,8 +13,26 @@ by adding `triangle_challenge` to your list of dependencies in `mix.exs`:
 def deps do
   [{:triangle_challenge, "~> 0.1.0"}]
 end
-```
 
+```
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/triangle_challenge](https://hexdocs.pm/triangle_challenge).
+
+## Testing
+
+
+## Reflections
+Short excerpts of the work process
+
+### Reflection on design Desisions.
+TODO
+
+### Structural Considerations.
+TODO
+
+### Readability of code and error cases.
+TODO
+
+### Showcase problem solving skills.
+TODO
