@@ -24,7 +24,7 @@ defmodule Triangle do
     iex> Triangle.type([0, 0, 0])
     :invalid
   """
-  def type(a, b, c) when a == 0 or b == 0 or c == 0 do
+  def type(a, b, c) when a <= 0 or b <= 0 or c <= 0 do
     :invalid
   end
 

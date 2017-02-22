@@ -49,9 +49,33 @@ defmodule Polygon do
     iex> Polygon.type([1, 1, 1])
     :equilateral
   """
-  def type([_, _], accumulator) do
-    IO.inspect accumulator
-    hd(accumulator)
+  def type([_, _], [ accumulator ]) do
+    accumulator
+  end
+
+  @doc """
+  """
+  def type([_, _], [:equilateral, :equilateral]) do
+    :equilateral
+  end
+
+  @doc """
+  """
+  def type([_, _], [:scalene, :scalene]) do
+    :scalene
+  end
+
+  @doc """
+  """
+  def type([_, _], [_, _]) do
+    :isosceles
+  end
+
+  @doc """
+  Restart the proccess with the accumulators
+  """
+  def type([_, _], n) do
+    type(n)
   end
 
   @doc """
@@ -68,10 +92,11 @@ defmodule Polygon do
   ## Examples
     iex> Polygon.type([9, 8, 8, 8, 8, 8])
     :isosceles
-
+    iex> Polygon.type([1, 2, 3, 4])
+    :scalene
   """
   def type([ head | tail ], accumulator) do
     [b, c] = Enum.take(tail, 2)
-    type(tail, [ Triangle.type(head, b, c) | accumulator])
+    type(tail, [ Triangle.type(head, b, c) | accumulator ])
   end
 end
