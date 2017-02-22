@@ -58,10 +58,4 @@ defmodule Triangle do
     { :ok, :scalene }
   """
   def type(_, _, _), do: { :ok, :scalene }
-
-  @doc """
-  Triangle Type: Is not a triangle when it doesn't have 3 sides.
-  That's a fun thing about triangles.
-  """
-  def type(_), do: { :error, :invalid }
 end

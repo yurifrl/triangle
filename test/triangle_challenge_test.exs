@@ -5,7 +5,53 @@ defmodule TriangleChallengeTest do
 
   use ExUnit.Case, async: true
   doctest Triangle
+  doctest Triangle.StreamAdapter
   doctest Polygon
+
+  @doc """
+  Test Triangles with streams finding posible triangles on pi
+  """
+  test "Triangles with streams" do
+    sample =
+      Triangle.StreamAdapter.read("./test/fixtures/pi.txt")
+      |> Enum.take(5)
+
+    assert sample === [
+      {:ok, :scalene, {3, 1, 4}},
+      {:ok, :scalene, {1, 5, 9}},
+      {:ok, :scalene, {2, 6, 5}},
+      {:ok, :scalene, {3, 5, 8}},
+      {:ok, :isosceles, {9, 7, 9}}
+    ]
+
+    is_valid? = fn
+      { :ok, _, _ } -> true
+      { _, _, _ } -> false
+    end
+    valid_count =
+      Triangle.StreamAdapter.read("./test/fixtures/pi.txt")
+      |> Enum.take(5)
+      |> Enum.count(is_valid?)
+
+    assert valid_count === 5
+  end
+
+  @doc """
+  Test Triangles with streams and a 'huge' chuck of data
+  Imagine you want to count every equilateral triangle that apears in a video
+  """
+  test "Triangles with streams on steroids" do
+    is_equilateral? = fn
+      { :ok, :equilateral, _ } -> true
+      { _, _, _ } -> false
+    end
+    equilateral_count =
+      Triangle.StreamAdapter.read("./test/fixtures/largeW.txt")
+      |> Enum.to_list
+      |> Enum.count(is_equilateral?)
+
+    assert equilateral_count === 18468
+  end
 
   @doc """
   Test the happy path, in a way that esposes the api

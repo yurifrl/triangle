@@ -29,6 +29,13 @@ OR
 mix test
 ```
 
+My workflow
+
+```
+docker-compose run --rm web mix test --listen-on-stdin --cover
+docker-compose run --rm web iex -S mix
+```
+
 ## Reflections
 Short excerpts of the work process
 
