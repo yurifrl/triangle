@@ -1,10 +1,43 @@
 defmodule Triangle.StreamAdapter do
+  use GenServer
+
   @type read :: :stream
 
   @moduledoc """
   Creates a stream that will read a file and apply the `Triangle.type/1` to every
   3 number group and Return the computed result as stream
   """
+
+  ### Client API
+  @doc """
+  Start the server
+  """
+  def start_link do
+    GenServer.start_link(__MODULE__, :ok, [])
+  end
+
+  @doc """
+  Client process
+  """
+  def begin(pid, path) do
+    GenServer.cast(pid, {:begin, path})
+  end
+
+  @doc """
+  Client read
+  """
+  def read(pid) do
+    GenServer.call(pid, {:read})
+  end
+
+  ### Server Callbacks
+
+  @doc """
+  Initilization response, called by start_link
+  """
+  def init(:ok) do
+    {:ok, []}
+  end
 
   @doc """
   Creates a stream that will read a file and apply the `Triangle.type/1` to every
@@ -14,12 +47,22 @@ defmodule Triangle.StreamAdapter do
     Triangle.StreamAdapter.read("./test/test.data")
     #=> :stream
   """
-  @spec read(String.t) :: :stream | { :error, String.t }
-  def read(file) do
-    file
-    |> File.stream!([], 2048)
-    |> Stream.map(&read_chunk/1)
-    |> Stream.flat_map(&List.flatten/1)
+  # @spec handle_read(String.t) :: :stream | { :error, String.t }
+  def handle_cast({:begin, path}, _from) do
+    stream =
+      path
+      |> File.stream!([], 2048)
+      |> Stream.map(&read_chunk/1)
+      |> Stream.flat_map(&List.flatten/1)
+
+    { :noreply, stream }
+  end
+
+  @doc """
+  Read from file
+  """
+  def handle_call({:read}, from, stream) do
+    {:reply, stream, stream}
   end
 
   @doc """
