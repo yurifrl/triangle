@@ -1,6 +1,6 @@
 defmodule Triangle do
   @moduledoc """
-  Documentation for Triangle Computer (Tc) Module.
+  Documentation for Triangle Module.
 
   ## Examples
     iex> Triangle.type(1, 1, 1)
@@ -17,8 +17,8 @@ defmodule Triangle do
   """
 
   @doc """
-  Triangle Type: no negative or zeroed sides.
-  sidenote, i don't like this, is not very clear
+  No negative or zeroed sides.
+  sidenote, i don't like this very much
 
   ## Examples
     iex> Triangle.type([0, 0, 0])
@@ -37,10 +37,6 @@ defmodule Triangle do
 
   @doc """
   Isosceles, when x are equal
-  This is tricky, with a triangle is easy if two are equal then is isosceles
-  But what when we trow more items?
-  A kite is isoceles, but it has two equal sizes
-  I will throw matches as they apear for now
 
   ## Examples
     iex> Triangle.type(1, 1, 2)

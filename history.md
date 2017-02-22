@@ -1,4 +1,18 @@
-# History
+# Design Desisions.
+TODO
+
+# Structural Considerations.
+TODO
+
+# Readability of code and error cases.
+TODO
+
+# Showcase problem solving skills.
+TODO
+
+# Reflect on decissions.
+
+# History.
 A timeline of development considerations (there will be grammar errors)
 
 - First thing i tought: that is to easy, so there migth be a trick there,
@@ -74,3 +88,9 @@ A timeline of development considerations (there will be grammar errors)
 - I have a idea, let me try it
 - Desided to split polygons in another module, because polygons is just triangles
   in a array
+- There were few considerations when i was creating the polygon feature:
+  " This is tricky, with a triangle is easy if two are equal then is isosceles
+    But what when we trow more items?
+    A kite is isoceles, but it has two equal sizes
+    I will throw matches as they apear for now "
+
