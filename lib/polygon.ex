@@ -22,24 +22,18 @@ defmodule Polygon do
     iex> Polygon.type([2, 2])
     :invalid
   """
-  def type(a) when length(a) < 3 do
-    :invalid
-  end
-
-  @doc """
-  If for some reason the user pass a accumulator
-  """
-  def type(a, []) when length(a) < 3 do
-    :invalid
-  end
+  def type(a) when length(a) < 3, do: :invalid
 
   @doc """
   The Entrypoint
   A n sided polygon
   """
-  def type(ngon) do
-    type(ngon, [])
-  end
+  def type(ngon), do: type(ngon, [])
+
+  @doc """
+  If for some reason the user pass a accumulator
+  """
+  def type(a, []) when length(a) < 3, do: :invalid
 
   @doc """
     Stop condition
@@ -49,34 +43,24 @@ defmodule Polygon do
     iex> Polygon.type([1, 1, 1])
     :equilateral
   """
-  def type([_, _], [ accumulator ]) do
-    accumulator
-  end
+  def type([_, _], [ accumulator ]), do: accumulator
 
   @doc """
   """
-  def type([_, _], [:equilateral, :equilateral]) do
-    :equilateral
-  end
+  def type([_, _], [:equilateral, :equilateral]), do: :equilateral
 
   @doc """
   """
-  def type([_, _], [:scalene, :scalene]) do
-    :scalene
-  end
+  def type([_, _], [:scalene, :scalene]), do: :scalene
 
   @doc """
   """
-  def type([_, _], [_, _]) do
-    :isosceles
-  end
+  def type([_, _], [_, _]), do: :isosceles
 
   @doc """
   Restart the proccess with the accumulators
   """
-  def type([_, _], n) do
-    type(n)
-  end
+  def type([_, _], n), do: type(n)
 
   @doc """
   The loop condition

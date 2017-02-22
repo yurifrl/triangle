@@ -24,20 +24,16 @@ defmodule Triangle do
     iex> Triangle.type([0, 0, 0])
     :invalid
   """
-  def type(a, b, c) when a <= 0 or b <= 0 or c <= 0 do
-    :invalid
-  end
+  def type(a, b, c) when a <= 0 or b <= 0 or c <= 0, do: :invalid
 
   @doc """
   Equilateral, when all sides are equal
 
   ## Examples
-    iex> Triangle.type([2, 2, 2])
+    iex> Triangle.type(2, 2, 2)
     :equilateral
   """
-  def type(a, a, a) do
-    :equilateral
-  end
+  def type(a, a, a), do: :equilateral
 
   @doc """
   Isosceles, when x are equal
@@ -47,42 +43,25 @@ defmodule Triangle do
   I will throw matches as they apear for now
 
   ## Examples
-    iex> Triangle.type([1, 1, 2])
+    iex> Triangle.type(1, 1, 2)
     :isosceles
   """
-  def type(a, a, _) do
-    :isosceles
-  end
-  def type(a, _, a) do
-    :isosceles
-  end
-  def type(_, a, a) do
-    :isosceles
-  end
+  def type(a, a, _), do: :isosceles
+  def type(a, _, a), do: :isosceles
+  def type(_, a, a), do: :isosceles
 
   @doc """
   Scalene, when they are, all different
 
   ## Examples
-    iex> Triangle.type([1, 2, 3])
+    iex> Triangle.type(1, 2, 3)
     :scalene
   """
-  def type(_, _, _) do
-    :scalene
-  end
+  def type(_, _, _), do: :scalene
 
   @doc """
   Triangle Type: Is not a triangle when it doesn't have 3 sides.
   That's a fun thing about triangles.
-
-  ## Examples
-    iex> Triangle.type(2, 2)
-    :invalid
-
-    iex> Triangle.type(2, 2, 2, 2)
-    :invalid
   """
-  def type(_) do
-    :invalid
-  end
+  def type(_), do: :invalid
 end

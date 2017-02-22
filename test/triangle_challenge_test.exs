@@ -4,8 +4,8 @@ defmodule TriangleChallengeTest do
   """
 
   use ExUnit.Case
-  # doctest Triangle
-  # doctest Polygon
+  doctest Triangle
+  doctest Polygon
 
   @doc """
   Test the happy path, in a way that esposes the api
