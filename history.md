@@ -66,6 +66,10 @@ A timeline of development considerations (there will be grammar errors)
 - I rather like this way of coding, when you can handle the decions you take on,
   such small and concise steps, and you are able to test then on the fly, is much
   more clear what you are doing
+- Start of working session 2:
 - My git log says that my last commit was 11h ago, so i had, i few minutes to
   think about this
+- I'm doing a more "advanced" research on basic Euclidean geometry, because apparently
+  i can't retaing basic math knowledge (to be fair those things only show up in tests)
+- I have a idea, let me try it
 
