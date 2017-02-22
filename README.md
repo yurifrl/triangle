@@ -20,7 +20,9 @@ and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/triangle_challenge](https://hexdocs.pm/triangle_challenge).
 
 ## Testing
-
+`docker-compose run --rm web mix test`
+Or
+`mix test`
 
 ## Reflections
 Short excerpts of the work process
