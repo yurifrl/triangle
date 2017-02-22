@@ -72,4 +72,5 @@ A timeline of development considerations (there will be grammar errors)
 - I'm doing a more "advanced" research on basic Euclidean geometry, because apparently
   i can't retaing basic math knowledge (to be fair those things only show up in tests)
 - I have a idea, let me try it
-
+- Desided to split polygons in another module, because polygons is just triangles
+  in a array
