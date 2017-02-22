@@ -1,13 +1,14 @@
 # TriangleChallenge
 
 A program that determine the type of a triangle.
+
 I takes the lengths of the triangle's three sides as input,
 and return whether the triangle is equilateral, isosceles or scalene.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `triangle_challenge` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `triangle_challenge` to your list of
+dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -15,14 +16,18 @@ def deps do
 end
 
 ```
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/triangle_challenge](https://hexdocs.pm/triangle_challenge).
+The docs can be found at [https://hexdocs.pm/triangle_challenge](https://hexdocs.pm/triangle_challenge).
 
 ## Testing
-`docker-compose run --rm web mix test`
-Or
-`mix test`
+```
+docker-compose run --rm web mix test
+```
+
+OR
+
+```
+mix test
+```
 
 ## Reflections
 Short excerpts of the work process
