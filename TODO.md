@@ -3,13 +3,13 @@
 Tasks:
 - [x] Coverage. 1/1
 - [x] Streams. 2/2
-- [] Non Blocking reads, whit GenServer. 2/2
-- [] Brief discussion on the design decisions i took. 1/?
-- [] Brief discussion on what structural considerations i took. 1/?
-- [] Brief discussion on how i showed readability of code and error cases. 1/?
-- [] Brief discussion on how i showed problem solving skills. 1/?
+- [x] Brief discussion on the design decisions i took. 1/0
+- [x] Brief discussion on what structural considerations i took. 1/0
+- [x] Brief discussion on how i showed readability of code and error cases. 1/0
+- [x] Brief discussion on how i showed problem solving skills. 1/0
+- [x] Fix grammar. 1/0
+- [] Non Blocking reads, with GenServer. 2/2
 - [] Enhance test suite. 1/?
-- [] Fix grammar. 1/?
 
 Incremental:
 - [x] Tests.
