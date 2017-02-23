@@ -11,7 +11,6 @@ defmodule TriangleChallengeTest do
   @doc """
   Test Triangles with streams finding posible triangles on pi
   """
-  @tag :wip
   test "Triangles with streams" do
     { :ok, pid } = Triangle.StreamAdapter.start_link
     :ok = Triangle.StreamAdapter.begin(pid,"./test/fixtures/pi.txt")
@@ -46,16 +45,22 @@ defmodule TriangleChallengeTest do
   Imagine you want to count every equilateral triangle that apears in a video
   """
   test "Triangles with streams on steroids" do
+    { :ok, pid } = Triangle.StreamAdapter.start_link
+    :ok = Triangle.StreamAdapter.begin(pid, "./test/fixtures/largeW.txt")
+
     is_equilateral? = fn
       { :ok, :equilateral, _ } -> true
       { _, _, _ } -> false
     end
     equilateral_count =
-      Triangle.StreamAdapter.read("./test/fixtures/largeW.txt")
-      |> Enum.to_list
+      Triangle.StreamAdapter.read(pid)
       |> Enum.count(is_equilateral?)
 
     assert equilateral_count === 18468
+
+    Triangle.StreamAdapter.read(pid)
+      |> Enum.take(5)
+      |> IO.inspect
   end
 
   @doc """
